@@ -33,6 +33,7 @@ model Category {
   link_type String @default("")
   link_action String  @default("")
   image String?
+  position Int @default(0)
 
   created_at DateTime? @default(now())
   update_at DateTime? @default(now())

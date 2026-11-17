@@ -67,6 +67,7 @@ class GetHomeByUserService {
 
     async getAllCategories() {
         const categories = await prismaClient.category.findMany({
+            orderBy: [{ position: 'asc' }, { created_at: 'asc' }],
             select: {
                 id: true,
                 title: true,
@@ -136,7 +137,7 @@ class GetHomeByUserService {
             info: "", 
             type: "help", 
             link_type: "phone", 
-            link_action: "https://api.whatsapp.com/send?phone=5511939466858", 
+            link_action: "https://api.whatsapp.com/send?phone=5511975423721", 
             image: "sac",
             available: true
 

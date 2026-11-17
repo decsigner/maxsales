@@ -49,6 +49,7 @@ class GetPurchasesAvailableByUserService {
 
     async getAllCategories() {
         const categories = await prismaClient.category.findMany({
+            orderBy: [{ position: 'asc' }, { created_at: 'asc' }],
             select: {
                 id: true,
                 title: true,
