@@ -37,4 +37,8 @@ WORKDIR /app
 ENV NODE_ENV production
 ENV PATH /root/.volta/bin:$PATH
 
+# /app/tmp e um volume do Fly (uploads permanentes). As imagens do repo ficam
+# em /app/tmp-seed e sao copiadas para o volume no start, sem sobrescrever.
+RUN cp -r /app/tmp /app/tmp-seed
+
 CMD [ "yarn", "run", "start" ]

@@ -6,7 +6,7 @@
   "author": "FMiciano <fabio.fferreira@mercadolivre.com>",
   "license": "MIT",
   "scripts": {
-    "start": "npx prisma migrate deploy; npx ts-node-dev --transpile-only src/server.ts",
+    "start": "mkdir -p tmp; [ -d tmp-seed ] && cp -n tmp-seed/* tmp/; npx prisma migrate deploy;npx ts-node-dev --transpile-only src/server.ts",
     "dev": "ts-node-dev src/server.ts"
   },
   "devDependencies": {
